@@ -10,17 +10,36 @@
             let choice = Math.floor((Math.random() * 3) + 1);
             switch (choice){
                 case 1:
-                    return "rock";
+                    return "Rock";
                     break;
                 case 2: 
-                    return "paper";
+                    return "Paper";
                     break;
                 case 3: 
-                    return "scissors";
+                    return "Scissors";
                     break;
                 default: 
                     return "ERROR";
             }
+        }
+
+        function capitalize(word){
+            return word.slice(0,1).toUpperCase() + word.slice(1).toLowerCase();
+        } 
+
+        function playRound(computerSelection, playerSelection){
+            let playerSelectionFormatted = capitalize(playerSelection);
+
+            if(computerSelection == playerSelectionFormatted){
+                return `It's a Draw!`
+            }
+
+            if(computerSelection == "Rock" && playerSelectionFormatted == "Paper" 
+            || computerSelection == "Paper" && playerSelectionFormatted == "Scissors" 
+            || computerSelection == "Scissors" && playerSelectionFormatted == "Rock"){
+                return `You Win! ${playerSelectionFormatted} beats ${computerSelection}`
+            }
+            return `You Lose! ${computerSelection} beats ${playerSelectionFormatted}`
         }
     </script>
 </head>
@@ -28,3 +47,4 @@
     
 </body>
 </html>
+
