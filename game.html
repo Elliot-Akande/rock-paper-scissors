@@ -41,6 +41,30 @@
             }
             return `You Lose! ${computerSelection} beats ${playerSelectionFormatted}`
         }
+
+        function game(){
+            let playerScore = 0;
+            let computerScore = 0;
+            let outcome;
+
+            for(let i = 0; i < 5; i++){
+                outcome = playRound(computerPlay(), prompt("Rock, Paper or Scissors?"));
+                if(outcome.slice(4,5) == "W"){
+                    playerScore++;
+                } else if (outcome.slice(4,5) == "L"){
+                    computerScore++;
+                }
+                console.log(outcome);
+            }
+
+            if(playerScore == computerScore){
+                return `The game is a draw! Both you and the computer Won ${playerScore} rounds each`
+            } else if(playerScore >= computerScore){
+                return `You Won the game! You Won ${playerScore} rounds and the computer Won ${computerScore}`
+            }
+            return `You Lost the game! The computer Won ${computerScore} rounds and you Won ${playerScore}`
+        }
+
     </script>
 </head>
 <body>
