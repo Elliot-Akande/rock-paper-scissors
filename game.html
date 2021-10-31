@@ -48,7 +48,7 @@
             let outcome;
 
             
-            for(let i = 0; i < 5; i++){
+            while(playerScore !== 5 && computerScore !== 5){
                 outcome = playRound(computerPlay(), validChoice());
                 if(outcome.slice(4,5) == "W"){
                     playerScore++;
@@ -58,9 +58,7 @@
                 console.log(outcome);
             }
 
-            if(playerScore == computerScore){
-                return `The game is a draw! Both you and the computer Won ${playerScore} rounds each`
-            } else if(playerScore >= computerScore){
+            if(playerScore >= computerScore){
                 return `You Won the game! You Won ${playerScore} rounds and the computer Won ${computerScore}`
             }
             return `You Lost the game! The computer Won ${computerScore} rounds and you Won ${playerScore}`
