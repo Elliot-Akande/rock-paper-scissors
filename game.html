@@ -47,8 +47,9 @@
             let computerScore = 0;
             let outcome;
 
+            
             for(let i = 0; i < 5; i++){
-                outcome = playRound(computerPlay(), prompt("Rock, Paper or Scissors?"));
+                outcome = playRound(computerPlay(), validChoice());
                 if(outcome.slice(4,5) == "W"){
                     playerScore++;
                 } else if (outcome.slice(4,5) == "L"){
@@ -63,6 +64,18 @@
                 return `You Won the game! You Won ${playerScore} rounds and the computer Won ${computerScore}`
             }
             return `You Lost the game! The computer Won ${computerScore} rounds and you Won ${playerScore}`
+        }
+
+        function validChoice(){
+            let playerSelectionFormatted; 
+            let valid = false;
+            while (!valid){
+                playerSelectionFormatted = capitalize(prompt("Rock, Paper or Scissors?"));
+                if(playerSelectionFormatted == "Rock" || playerSelectionFormatted == "Paper" || playerSelectionFormatted == "Scissors"){
+                    valid = true;
+                }
+            }
+            return playerSelectionFormatted;
         }
 
     </script>
