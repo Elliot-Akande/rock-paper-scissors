@@ -4,22 +4,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <script src="rps.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    <h1>Rock! Paper! Scissors!</h1>
+    <div id="header">
+        <h1>Rock! Paper! Scissors!</h1>
+        <h4>First to five points</h3>
+    </div>
     <div id="total-scores">
         <h2>Score</h2>
-        <div id="player-score" class="score">
-            <h3>You:</h3>
-            <h2>0</h2>
+        <div id="score-display">
+            <div id="player-score" class="score">
+                <h3>You:</h3>
+                <h2 class="score-value">0</h2>
+            </div>
+            <div id="computer-score" class="score">
+                <h3>Computer:</h3>
+                <h2 class="score-value">0</h2>
+            </div>
         </div>
-        <div id="computer-score" class="score">
-            <h3>Computer:</h3>
-            <h2>0</h2>
-        </div>
+    </div>
+    <div id="game-result">
+        <h1></h1>
+        <button id="reload">
+            Play Again
+        </button>
     </div>
     <div id="selection">
         <button id="Rock" class="choice">Rock</button>
